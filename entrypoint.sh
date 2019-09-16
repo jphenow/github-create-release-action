@@ -42,7 +42,7 @@ if [[ -z "$GITHUB_TOKEN" ]]; then
 fi
 
 
-current_branch=$(git rev-parse --abbrev-ref HEAD)
+current_branch=${GITHUB_REF:11}
 echo "DEBUG: current branch = $current_branch"
 if [ "$current_branch" = "master" ];then
 
